@@ -1,0 +1,188 @@
+body {
+  font-family: Arial, sans-serif;
+  background: url('Gemini1.png') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  justify-content: center;
+}
+
+button {
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+.kinoko {
+  background-color: #4caf50 !important;
+  color: white !important;
+}
+
+.kinoko:hover {
+  background-color: #66bb6a !important;
+}
+
+.takenoko {
+  background-color: #4caf50 !important;
+  color: white !important;
+}
+
+.takenoko:hover {
+  background-color: #66bb6a !important;
+}
+
+#display {
+  font-size: 28px;
+  color: #333;
+  margin-top: 18px;
+  margin-bottom: 8px;
+  opacity: 1;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.fade {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.content {
+  background-color: rgba(255, 255, 255, 0.75);
+  padding: 30px 25px;
+  border-radius: 15px;
+  margin-top: 40px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  max-width: 640px;
+  width: 90%;
+  box-sizing: border-box;
+  z-index: 2;
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 15px 0;
+  display: flex;
+  justify-content: center;
+  z-index: 3;
+}
+
+.header img {
+  height: 180px;
+  display: block;
+}
+
+.button-actions {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 5px;
+}
+
+.copy-btn {
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 5px;
+  font-weight: 600;
+}
+
+.speak-btn {
+  background-color: #ff9800;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 5px;
+  font-weight: 600;
+}
+
+.share-btn {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 5px;
+  font-weight: 600;
+}
+
+.romaji-btn {
+  background-color: #e91e63;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.romaji-btn:hover {
+  background-color: #c2185b;
+}
+
+.japanese-btn {
+  background-color: #9c27b0;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.japanese-btn:hover {
+  background-color: #7b1fa2;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

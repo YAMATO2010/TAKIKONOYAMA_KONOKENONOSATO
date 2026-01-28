@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>たきこの山このけのの里</title>
+  <link rel="stylesheet" href="Kinokotakenoko.css">
+</head>
+<body>
+
+  <header class="header">
+    <img src="5000choyen.png" alt="5000choyen">
+  </header>
+
+  <div class="content">
+    <div class="button-container">
+      <button onclick="kt()" class="kinoko">ロング</button>
+      <button onclick="kt2()" class="takenoko">ショート</button>
+    </div>
+
+    <div id="display"></div>
+
+    <div class="button-actions">
+      <button onclick="copyToClipboard()" class="copy-btn">コピー</button>
+      <button onclick="speakText()" class="speak-btn">読み上げ</button>
+      <button onclick="shareText()" class="share-btn">シェア</button>
+      <button onclick="convertToRomaji()" class="romaji-btn">ローマ字</button>
+      <button onclick="restoreJapanese()" class="japanese-btn">日本語</button>
+    </div>
+  </div>
+  
+  <script src="Kinokotakenoko.js"></script>
+</body>
+</html>
