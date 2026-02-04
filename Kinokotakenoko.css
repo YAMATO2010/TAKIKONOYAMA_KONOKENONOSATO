@@ -186,3 +186,57 @@ button:active {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* kenka animation styles */
+.kenka-container {
+  position: fixed;
+  inset: 0; /* top:0; right:0; bottom:0; left:0 */
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 9999;
+}
+
+.kenka {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0.6);
+  will-change: transform, opacity, left, top;
+  font-size: 28px;
+  user-select: none;
+  white-space: nowrap;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.45);
+  transition: opacity 400ms linear;
+}
+
+.kenka--small { font-size: 18px; }
+.kenka--large { font-size: 44px; }
+
+/* 画像要素を使う場合の調整 */
+.kenka img {
+  display: block;
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* 衝突時の爆発表示 */
+.kenka-explosion {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-50%,-50%) scale(0.6);
+  font-size: 40px;
+  pointer-events: none;
+  user-select: none;
+  text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  animation: explodeAnim 600ms ease-out forwards;
+  z-index: 10000;
+}
+
+@keyframes explodeAnim {
+  0% { opacity: 0; transform: translate(-50%,-50%) scale(0.4); }
+  30% { opacity: 1; transform: translate(-50%,-50%) scale(1.15); }
+  100% { opacity: 0; transform: translate(-50%,-50%) scale(1.6); }
+}
