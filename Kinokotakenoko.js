@@ -39,7 +39,7 @@ function shuffle(array) {
 }
 
 function kt() {
-  const ktlist = ['き',"の","こ" ,"の","山","た","け","の","こ","の","里"];
+  const ktlist = ['き',"山","た","の","け","の","こ","里","の","こ" ,"の"];
   shuffle(ktlist);  
   const display = document.getElementById('display');
   display.classList.remove('fade');
@@ -52,10 +52,20 @@ function kt() {
   if (result.includes("きのこの山") && result.includes("たけのこの里")) {
     kenkaAnimation({imageSrc: 'kenka_businessman.png'});
   }
+  const noMatch = result.match(/の+/g) || [];
+
+  const noMatchCounts = noMatch.reduce((a, b) => Math.max(a, b.length), 0);
+
+  
+  if (noMatchCounts == 4) {
+    kenkaAnimation({imageSrc: 'paint_hiragana45_no.png', maxCount: 100, life: 4000, spawnInterval: 40});
+
+  }
+ 
 }
 
 function kt2() {
-  const ktlist = ['き',"の","こ" ,"た","け","の","こ"];
+  const ktlist = ['き',"の","の","こ","こ" ,"た","け"];
   shuffle(ktlist);  
   const display = document.getElementById('display');
   display.classList.remove('fade');
@@ -68,6 +78,7 @@ function kt2() {
   if (result.includes("きのこ") && result.includes("たけのこ")) {
     kenkaAnimation({imageSrc: 'kenka_businessman.png'});
   }
+
 }
 
 function copyToClipboard() {
